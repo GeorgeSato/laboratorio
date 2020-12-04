@@ -5,7 +5,14 @@ const redis = require('redis');
 const PORT = process.env.PORT || 5000;
 const REDIS_PORT = process.env.REDIS_PORT || 6379;
 
-const client = redis.createClient(REDIS_PORT);
+//const client = redis.createClient(REDIS_PORT);
+const client = redis.createClient({
+   port :6379,
+   host : '127.0.0.1',
+   password : 'jorge'
+}
+
+
 
 const app = express();
 
